@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         goButton.setVisibility(INVISIBLE);
         imageView.animate().translationXBy(1000f).setDuration(1200);
         generateNumbers();
+
         new CountDownTimer(30100, 1000){
 
 
