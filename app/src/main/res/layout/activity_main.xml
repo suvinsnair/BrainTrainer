@@ -37,9 +37,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:onClick="goClick">
 
     </RelativeLayout>
 
@@ -47,46 +48,49 @@
         android:id="@+id/NumberView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/question"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="5 + 16"
-        android:textSize="45sp" />
+        android:textSize="45sp"
+        android:visibility="invisible" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
         android:layout_marginTop="14dp"
         android:text="0/0"
         android:textSize="30sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="29dp"
-        android:layout_marginEnd="29dp" />
+        android:visibility="invisible" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="30s"
-        android:textSize="30sp"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignBaseline="@+id/question"
+        android:layout_alignBottom="@+id/question"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp" />
+        android:layout_marginStart="28dp"
+        android:text="30s"
+        android:textSize="30sp"
+        android:visibility="invisible" />
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="2"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/gridLayout">
+        android:layout_centerVertical="true"
+        android:columnCount="2"
+        android:rowCount="2">
 
         <Button
             android:id="@+id/button1"
@@ -96,7 +100,10 @@
             android:layout_rowWeight="1"
             android:gravity="fill"
             android:text="Button"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:onClick="buttonPressed"
+            android:tag="0"/>
 
         <Button
             android:id="@+id/button2"
@@ -105,28 +112,37 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:gravity="fill"
+            android:onClick="buttonPressed"
             android:text="Button"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:tag="1"/>
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="buttonPressed"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:gravity="fill"
             android:text="Button"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:tag="2"/>
 
         <Button
             android:id="@+id/button4"
             android:layout_width="wrap_content"
+            android:onClick="buttonPressed"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:gravity="fill"
             android:text="Button"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:tag="3"/>
     </GridLayout>
 
 </RelativeLayout>
