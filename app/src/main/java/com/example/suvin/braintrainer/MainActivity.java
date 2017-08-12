@@ -24,12 +24,13 @@ public class MainActivity extends AppCompatActivity {
     Button button2;
     Button button3;
     Button button4;
-    int number;
+    int number=1;
     int locationanswer;
 
     TextView NumberView;
     ArrayList<Integer> answers=new ArrayList<Integer>();
     int score=0;
+
 
 
     public void buttonPressed(View view){
@@ -39,12 +40,17 @@ public class MainActivity extends AppCompatActivity {
             score++;
 
             Toast.makeText(this, "CORRECT !!!..", Toast.LENGTH_SHORT).show();
-            question.setText(Integer.toString(score) + "/" +  Integer.toString(number));
+            question.setText(Integer.toString(score) + " / " +  Integer.toString(number));
+            answers.clear();
+            generateNumbers();
 
 
 
         }
         else{
+            Toast.makeText(this, "SORRY   !!!..", Toast.LENGTH_SHORT).show();
+            question.setText(Integer.toString(score) + " / " + Integer.toString(number));
+            answers.clear();
             generateNumbers();
 
 
@@ -66,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         button2.setVisibility(VISIBLE);
         button3.setVisibility(VISIBLE);
         button4.setVisibility(VISIBLE);
+        question.setText(Integer.toString(0) + " / " +  Integer.toString(1));
+
 
 
         Log.i("Go Pressed", "Now");
@@ -80,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Random random=new Random();
+        number++;
 
         int a=random.nextInt(20);
         int b=random.nextInt(20);
