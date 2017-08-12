@@ -1,5 +1,6 @@
 package com.example.suvin.braintrainer;
 
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     Button button4;
     int number=1;
     int locationanswer;
+    TextView finishview;
 
     TextView NumberView;
     ArrayList<Integer> answers=new ArrayList<Integer>();
@@ -80,6 +82,25 @@ public class MainActivity extends AppCompatActivity {
         goButton.setVisibility(INVISIBLE);
         imageView.animate().translationXBy(1000f).setDuration(1200);
         generateNumbers();
+        new CountDownTimer(30100, 1000){
+
+
+            @Override
+            public void onTick(long l) {
+
+                timer.setText((String.valueOf(l/1000)) + " s");
+            }
+
+            @Override
+            public void onFinish() {
+
+                timer.setText("0 s ");
+
+                finishview.setVisibility(VISIBLE);
+
+
+            }
+        }.start();
 
 
     }
@@ -143,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
         button2 =(Button) findViewById(R.id.button2);
         button3 =(Button)findViewById(R.id.button3);
         button4 =(Button)findViewById(R.id.button4);
+        finishview=(TextView)findViewById(R.id.finishview);
 
 
 
