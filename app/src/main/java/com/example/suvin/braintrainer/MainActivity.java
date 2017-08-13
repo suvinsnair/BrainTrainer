@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button goButton;
     ImageView imageView;
     TextView question;
+    Button finishview;
     TextView timer;
     Button button1;
     Button button2;
@@ -27,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     Button button4;
     int number=1;
     int locationanswer;
-    TextView finishview;
 
     TextView NumberView;
     ArrayList<Integer> answers=new ArrayList<Integer>();
@@ -98,6 +98,14 @@ public class MainActivity extends AppCompatActivity {
                 timer.setText("0 s ");
 
                 finishview.setVisibility(VISIBLE);
+                timer.setVisibility(INVISIBLE);
+                button1.setVisibility(INVISIBLE);
+                button2.setVisibility(INVISIBLE);
+                button3.setVisibility(INVISIBLE);
+                button4.setVisibility(INVISIBLE);
+                NumberView.setVisibility(INVISIBLE);
+                question.setVisibility(INVISIBLE);
+                generateNumbers();
 
 
             }
@@ -106,12 +114,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    public void finishview(View view){
+
+        button1.setVisibility(VISIBLE);
+        button2.setVisibility(VISIBLE);
+        button3.setVisibility(VISIBLE);
+        button4.setVisibility(VISIBLE);
+        question.setVisibility(VISIBLE);
+        timer.setVisibility(VISIBLE );
+        NumberView.setVisibility(VISIBLE);
+        generateNumbers();
+
+
+    }
+
+
+
+
     public void generateNumbers(){
 
 
         Random random=new Random();
         number++;
-
         int a=random.nextInt(20);
         int b=random.nextInt(20);
 
@@ -165,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
         button2 =(Button) findViewById(R.id.button2);
         button3 =(Button)findViewById(R.id.button3);
         button4 =(Button)findViewById(R.id.button4);
-        finishview=(TextView)findViewById(R.id.finishview);
+        finishview=(Button)findViewById(R.id.finishview);
 
 
 

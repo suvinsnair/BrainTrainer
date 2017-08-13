@@ -42,7 +42,7 @@
         android:layout_alignParentTop="true"
         android:onClick="goClick">
 
-        <TextView
+        <Button
             android:id="@+id/finishview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="149dp"
             android:background="@android:color/holo_orange_light"
-            android:text="Play Again"
+            android:text="Play  Again"
             android:textSize="35sp"
             android:visibility="invisible" />
     </RelativeLayout>
