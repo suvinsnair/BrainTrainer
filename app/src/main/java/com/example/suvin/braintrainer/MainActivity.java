@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
             question.setText(Integer.toString(score) + " / " + Integer.toString(number));
             answers.clear();
             generateNumbers();
+            donotCreate();
+            picktheday();
+            donot_break();
 
 
 
